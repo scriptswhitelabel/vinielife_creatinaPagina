@@ -1,0 +1,187 @@
+/* Base */
+:root {
+  --bg: #0b0b10;
+  --surface: #12121a;
+  --card: #181825;
+  --text: #e9e9f1;
+  --muted: #b8b8c7;
+  --primary: #7a3cff;
+  --primary-600: #6b2fff;
+  --accent: #9eff00;
+  --border: #272737;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% -10%, #151530 0%, transparent 60%),
+             radial-gradient(1000px 600px at 100% 0%, #1e1e3a 0%, transparent 60%),
+             var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(11, 11, 16, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  transition: transform 0.12s ease, background 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-600) 100%);
+  border-color: transparent;
+  color: white;
+}
+.btn-outline {
+  background: transparent;
+}
+.btn-lg {
+  padding: 14px 22px;
+  font-size: 1.05rem;
+}
+
+/* Hero */
+.hero { padding: 64px 0 24px; }
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+.subtitle { color: var(--accent); margin: 0 0 10px; font-weight: 600; }
+.lead { color: var(--muted); max-width: 800px; margin: 0 0 20px; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Sections */
+.section { padding: 36px 0; }
+.center { text-align: center; }
+.small { font-size: 0.9rem; color: var(--muted); }
+.muted { color: var(--muted); }
+
+/* Video */
+.video-wrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border: 1px solid var(--border);
+}
+.video-wrapper video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.video-caption { color: var(--muted); margin-top: 12px; text-align: center; }
+
+/* Benefits */
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.benefit-list li {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+.benefit-list h3 { margin: 0 0 6px; }
+.benefit-list p { margin: 0; color: var(--muted); }
+
+/* Product */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  align-items: stretch;
+}
+.product-copy .bullets {
+  margin: 12px 0 18px;
+  padding-left: 18px;
+}
+.product-copy .bullets li { margin: 6px 0; }
+.product-media .card {
+  position: relative;
+  background: linear-gradient(180deg, #1b1b2a 0%, #12121a 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  min-height: 220px;
+}
+.card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #0c1e0c;
+  color: #c7ff6e;
+  border: 1px solid #235123;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.card-body h3 { margin: 0 0 8px; }
+.card-body p { margin: 0; }
+
+/* FAQ */
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq p { color: var(--muted); margin: 8px 0 0; }
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0 40px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .header .container { height: 60px; }
+  .benefit-list { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr; }
+}
+
+
