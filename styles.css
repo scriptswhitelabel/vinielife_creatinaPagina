@@ -95,6 +95,38 @@ body {
 .small { font-size: 0.9rem; color: var(--muted); }
 .muted { color: var(--muted); }
 
+/* Gym badges */
+.gym-badges .badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.gym-badges .badge {
+  background: #0e1525;
+  border: 1px solid var(--border);
+  color: #cfe1ff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Uso no treino */
+.usage-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.usage-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+.usage-card h3 { margin: 0 0 6px; }
+.usage-card p { margin: 0; color: var(--muted); }
+
 /* Video */
 .video-wrapper {
   position: relative;
@@ -182,6 +214,7 @@ body {
   .header .container { height: 60px; }
   .benefit-list { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr; }
+  .usage-grid { grid-template-columns: 1fr; }
 }
 
 
