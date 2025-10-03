@@ -95,6 +95,39 @@ body {
 .small { font-size: 0.9rem; color: var(--muted); }
 .muted { color: var(--muted); }
 
+/* Image slots */
+.image-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 10px;
+}
+.image-slot {
+  position: relative;
+  width: 100%;
+  background: repeating-linear-gradient(45deg, #141426, #141426 10px, #101020 10px, #101020 20px);
+  border: 1px dashed #3a3a58;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.image-slot::after {
+  content: "Imagem";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #7d7da8;
+  font-weight: 600;
+  background: rgba(0,0,0,0.08);
+}
+
+/* Aspect ratios */
+.ratio-16x9 { aspect-ratio: 16/9; }
+.ratio-4x3 { aspect-ratio: 4/3; }
+.ratio-4x5 { aspect-ratio: 4/5; }
+.ratio-1x1 { aspect-ratio: 1/1; }
+.ratio-21x9 { aspect-ratio: 21/9; }
+
 /* Gym badges */
 .gym-badges .badges {
   display: flex;
